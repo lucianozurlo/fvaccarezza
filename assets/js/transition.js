@@ -1,5 +1,5 @@
 // =========================
-// nav.js
+// transition.js
 // =========================
 (function () {
   const root = document.documentElement;

@@ -1,16 +1,15 @@
 /* SPECIAL
    ================= */
 @media only screen and (max-width: 1420px) {
-  html:not(.site-freeze) #page-header .home-title span {
+  #page-header .home-title span {
     font-size: 11vw;
   }
-  html:not(.site-freeze) #page-header.ph-full {
+  #page-header.ph-full {
     display: flex;
     align-items: center;
     min-height: 100dvh;
   }
 }
-
 /* TABLET: Landscape 
    ================= */
 @media only screen and (max-width: 1200px) {
@@ -980,45 +979,4 @@
   } */
 
   /* TESTIMONIOS */
-}
-
-/* =========================================================
-   Responsive scaling system (freeze @1500 → scale down to 960)
-   + Retina desktop factor (0.8)
-   Aplica sobre: <main id="body-inner">
-   ========================================================= */
-
-:root{
-  --site-scale: 1;
-  --site-freeze-w: 1500px;
-}
-
-/* Evitar scroll horizontal cuando congelamos layout */
-html.site-freeze,
-html.site-freeze body{
-  overflow-x: hidden;
-}
-
-/* 1) Cuando hay “freeze”, el layout se calcula a ancho fijo */
-html.site-freeze #body-inner{
-  width: var(--site-freeze-w);
-  max-width: none;      /* clave: no lo limites */
-  margin: 0;            /* lo alineo al borde izq (sin “márgenes raros”) */
-}
-
-/* 2) Escalado principal (Chrome/Safari/Edge suelen soportar zoom) */
-html.site-zoom #body-inner{
-  zoom: var(--site-scale);
-}
-
-/* 3) Fallback si el browser NO soporta zoom */
-html.no-zoom.site-zoom #body-inner{
-  transform: scale(var(--site-scale));
-  transform-origin: top left;
-}
-
-/* Si estás en fallback sin zoom, necesitás compensar el “layout box”
-   (si no, te queda un overflow fantasma). Esto ayuda bastante: */
-html.no-zoom.site-zoom #body-inner{
-  width: calc(var(--site-freeze-w) / var(--site-scale));
 }
