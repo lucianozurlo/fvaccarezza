@@ -980,3 +980,111 @@
 
   /* TESTIMONIOS */
 }
+
+
+/* =========================================================
+   Retina desktop/laptop global scale (80%)
+   - Solo pantallas retina con puntero fino (mouse/trackpad)
+   - Escala TODO al 80%, pero mantiene 100% del alto visible
+   ========================================================= */
+:root { --ui-retina-scale: 1; }
+
+@media (pointer: fine) and (min-resolution: 2dppx),
+       (pointer: fine) and (-webkit-min-device-pixel-ratio: 2) {
+  :root { --ui-retina-scale: 0.8; }
+
+  html, body { overflow-x: hidden; }
+
+  /* Root wrapper (tu sitio entero vive acá) */
+  main#body-inner.ui-scale-root {
+    transform: scale(var(--ui-retina-scale));
+    transform-origin: 0 0;
+
+    /* Compensación: el render final sigue siendo 100vw x 100dvh */
+    width: calc(100vw / var(--ui-retina-scale));
+    min-height: calc(100dvh / var(--ui-retina-scale));
+  }
+
+  /* ===== Full-width fixes (reglas que usan 100vw / 100dvw) ===== */
+  #page-header .hover-fv .home-title {
+    max-width: calc(100vw / var(--ui-retina-scale));
+  }
+
+  footer .footer-bottom-full,
+  footer .footer-bottom-cut,
+  footer .footer-bottom-mask {
+    width: calc(100vw / var(--ui-retina-scale));
+    -webkit-mask-size: calc(100vw / var(--ui-retina-scale)) auto;
+    mask-size: calc(100vw / var(--ui-retina-scale)) auto;
+  }
+
+  body.work #details {
+    max-width: calc(100dvw / var(--ui-retina-scale));
+  }
+
+  body.work .work-content img.full-min,
+  body.work .work-content .tt-wrap .tt-col-md-6 img {
+    max-width: calc((100dvw / var(--ui-retina-scale)) - 30px) !important;
+  }
+
+  body.work .work-content img.full-min.full-mob {
+    max-width: calc(100dvw / var(--ui-retina-scale)) !important;
+  }
+
+  body.work.frogbazar .tt-wrap .tt-col-md-6:last-child img:nth-child(3) {
+    width: calc((100dvw / var(--ui-retina-scale)) + 60px);
+  }
+
+  /* ===== Full-height fixes (reglas que usan 100dvh) ===== */
+  .tt-ol-menu {
+    max-height: calc(100dvh / var(--ui-retina-scale));
+  }
+
+  #about {
+    min-height: calc(100dvh / var(--ui-retina-scale));
+  }
+
+  #page-header.ph-full {
+    min-height: calc(100dvh / var(--ui-retina-scale));
+  }
+
+  .modal-full {
+    min-height: calc(100dvh / var(--ui-retina-scale));
+  }
+
+  .modal-simple.submmodal .modal__dialog {
+    height: calc(100dvh / var(--ui-retina-scale));
+    max-height: calc(100dvh / var(--ui-retina-scale));
+  }
+
+  /* ===== Animaciones que dependen de 100dvh ===== */
+  @keyframes modalDropBounce {
+    0% {
+      opacity: 0;
+      transform: translateY(calc(-100dvh / var(--ui-retina-scale)));
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(1vh);
+    }
+    70% {
+      opacity: 1;
+      transform: translateY(-0.2vw);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes modalUpOut {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(calc(-100dvh / var(--ui-retina-scale)));
+    }
+  }
+}
