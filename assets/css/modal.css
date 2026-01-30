@@ -1,0 +1,324 @@
+/* =========================
+   modal.css
+   ========================= */
+
+/* Vars (ajustá si ya las tenés en otro CSS global) */
+:root {
+  --modal-fade-ms: 400ms;
+  --modal-close-ms: 1500ms; /* matchea las animaciones de .modal__dialog (1.5s) */
+}
+
+/* ---------- MODAL FULL (si lo usás) ---------- */
+.modal-full {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px;
+  border-radius: 0;
+}
+.modal-full .bg-vectors {
+  z-index: -1;
+}
+.modal-item {
+  display: flex;
+  flex-direction: row;
+  max-width: 568px;
+}
+.modal-item .number {
+  font-size: 58px;
+  font-weight: 800;
+  line-height: 1;
+  min-width: 75px;
+  color: var(--color-fede-fv);
+}
+.modal-item p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  margin-bottom: 17px;
+  letter-spacing: 0.5px;
+  margin-left: 0.5px;
+  color: var(--color-fede-fv);
+}
+.modal-item p.ans {
+  color: var(--color-fede-fv-gray);
+  margin-bottom: 0;
+}
+.modal-full a.close,
+.modal-simple a.close {
+  width: 568px;
+  height: 41px;
+  background-image: url(../img/modal-button-close.png);
+  background-size: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto;
+  border-radius: 2px;
+  font-size: 16px;
+  color: var(--color-fede-fv);
+  z-index: 9999999;
+  transition: all 0.2s ease-in-out;
+}
+.modal-full a:hover.close,
+.modal-simple a:hover.close {
+  color: var(--color-fede-white);
+  background-color: var(--color-fede-fv);
+  border-radius: 6px;
+}
+
+/* ---------- MODAL SIMPLE (base) ---------- */
+.modal-simple {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-items: center;
+  z-index: 99990;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.modal-simple .content {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+.modal-simple .modal__dialog {
+  position: relative;
+  display: flex;
+  background: var(--color-fede-white);
+  border-radius: 10px;
+  padding: 48px 64px;
+  transform: translateY(-180px) scale(0.98);
+  opacity: 0;
+  transition: none;
+  will-change: transform, opacity;
+}
+
+/* Scroll lock del body (cuando hay modal abierto) */
+.modal-open {
+  overflow: hidden;
+}
+.modal__backdrop {
+  position: absolute;
+  inset: 0;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  background: var(--color-fede-black-cc);
+  opacity: 0;
+  transition: opacity var(--modal-fade-ms) ease;
+}
+.modal-simple.is-open {
+  pointer-events: auto;
+  opacity: 1;
+}
+.modal-simple.is-open .modal__backdrop {
+  opacity: 1;
+}
+.modal-simple.is-open .modal__dialog {
+  animation: modalDropBounce var(--modal-close-ms) ease both;
+}
+.modal-simple.is-closing {
+  pointer-events: none;
+  opacity: 0;
+}
+.modal-simple.is-closing .modal__backdrop {
+  opacity: 0;
+}
+.modal-simple.is-closing .modal__dialog {
+  animation: modalUpOut var(--modal-close-ms) ease both;
+}
+
+@keyframes modalDropBounce {
+  0% {
+    opacity: 0;
+    transform: translateY(-100dvh);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(1vh);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(-0.2vw);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes modalUpOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100dvh);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modal-simple,
+  .modal__backdrop {
+    transition: none !important;
+  }
+  .modal-simple.is-open .modal__dialog,
+  .modal-simple.is-closing .modal__dialog {
+    animation: none !important;
+  }
+  .modal-simple .modal__dialog {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* ---------- SUBMODAL (full-screen) ---------- */
+.modal-simple.submmodal .modal__backdrop {
+  background: transparent !important;
+}
+.modal-simple.submmodal .modal__dialog {
+  padding: 60px 60px 120px;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 95px;
+  background: #ffffffee;
+}
+.modal-simple.submmodal .modal__dialog h3 {
+  font-size: 35px;
+  font-weight: 800;
+  line-height: 48px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.modal-simple.submmodal .bg-vectors {
+  margin-top: 26px;
+  z-index: -1;
+}
+.modal-simple.submmodal .works-items {
+  width: 100%;
+  max-width: 1320px;
+  display: flex;
+  gap: 40px 64px;
+  justify-items: center;
+  justify-content: center;
+}
+.modal-simple.submmodal .works-items a {
+  color: var(--color-fede-fv);
+  background-color: transparent;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 6px;
+  padding: 6px 6px 6px 12px;
+  border-radius: 7px;
+  border: 1px solid transparent;
+  transition: all 0.35s ease-in-out;
+}
+.modal-simple.submmodal .works-items a:hover {
+  color: var(--color-fede-white);
+  background-color: var(--color-fede-fv);
+}
+.modal-simple.submmodal .works-items a.active {
+  border: 1px solid var(--color-fede-fv);
+  pointer-events: none !important;
+}
+.modal-simple.submmodal a.submodal-close {
+  position: absolute;
+  top: 74px;
+  right: 74px;
+  width: 24px;
+  height: 24px;
+  opacity: 0.5;
+  transition: all 0.2s ease-in-out;
+}
+.modal-simple.submmodal a:hover.submodal-close {
+  opacity: 1;
+}
+.modal-simple.submmodal .content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 39px;
+}
+
+/* ---------- SERVICES MODALS (si los usás) ---------- */
+.modal-simple.services-modals .modal__dialog {
+  min-height: unset;
+  width: 732px;
+  border-radius: 10px;
+  padding: 48px 64px;
+  gap: 54px;
+  flex-direction: column;
+}
+.modal-simple.services-modals header {
+  margin-bottom: 16px;
+}
+.modal-simple.services-modals header span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.modal-simple.services-modals .works-items {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 16px;
+  margin-block: 16px;
+}
+.modal-simple.services-modals .works-items a {
+  text-decoration: none;
+  color: #111;
+  padding: 4px 0;
+  line-height: 1.2;
+}
+.modal-simple.services-modals .works-items a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================
+   FIX: scroll en mobile para SUBMODAL full-screen
+   (body está bloqueado => el scroll tiene que vivir en .content)
+   ========================================== */
+/* .modal-simple.submmodal {
+  align-items: stretch;
+  justify-items: stretch;
+}
+.modal-simple.submmodal .modal__dialog {
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden; /* clave */
+  overscroll-behavior: contain; /* evita “bounce” hacia el body */
+  padding: 80px 25px 0px;
+  gap: 20px;
+  display: flex;
+  align-items: center;
+}
+.modal-simple.submmodal .content {
+  flex: 1 1 auto;
+  min-height: 0; /* CLAVE en flex para que overflow funcione */
+  height: auto !important;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+
+  padding-bottom: 40px;
+
+  width: 100%;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 341px;
+} */

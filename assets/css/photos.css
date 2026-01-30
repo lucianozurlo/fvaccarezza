@@ -1,0 +1,93 @@
+/* Gap 40px (tu theme) */
+.tt-grid.ttgr-gap-40,
+.tt-grid.ttgr-gap-40 .tt-grid-top {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+body.tt-boxed .tt-wrap .tt-grid.ttgr-gap-40 {
+  margin-left: -40px;
+  margin-right: -40px;
+}
+
+body:not(.tt-boxed) .tt-section-inner.tt-wrap .tt-grid.ttgr-gap-40 .tt-grid-top,
+.tt-section-inner:not(.tt-wrap) .tt-grid.ttgr-gap-40 .tt-grid-top {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.tt-grid.ttgr-gap-40 .ttgr-item-inner {
+  margin: 0 20px 40px 20px;
+}
+
+/* Isotope widths */
+#gallery .grid-sizer,
+#gallery .tt-grid-item {
+  width: 33.333%;
+}
+
+#gallery .gutter-sizer {
+  width: 16px;
+}
+
+#gallery .tt-grid-item.is-wide {
+  width: 66.666%;
+}
+
+@media (max-width: 980px) {
+  #gallery .grid-sizer,
+  #gallery .tt-grid-item {
+    width: 50%;
+  }
+
+  #gallery .tt-grid-item.is-wide {
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  #gallery .grid-sizer,
+  #gallery .tt-grid-item,
+  #gallery .tt-grid-item.is-wide {
+    width: 100%;
+  }
+
+  #gallery .gutter-sizer {
+    width: 0;
+  }
+}
+
+/* Tile */
+.photo-tile,
+.tt-gallery-image,
+#gallery img {
+  position: relative;
+}
+.photo-tile {
+  overflow: hidden;
+  isolation: isolate;
+  background: #fff;
+}
+.photo-tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: var(--color-fede-orange);
+  transition: background 0.7s cubic-bezier(0.34, 1.5, 0.9, 1);
+}
+.photo-tile img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+}
+
+/* Hover “limpio” */
+#gallery .tt-grid-item:hover .photo-tile::before,
+#gallery.no-tint .photo-tile::before {
+  background: var(--color-fede-orange-00);
+}

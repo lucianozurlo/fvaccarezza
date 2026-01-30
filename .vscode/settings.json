@@ -1,0 +1,20 @@
+{
+  "workbench.colorCustomizations": {
+    "activityBar.hoverBackground": "#ff660050",
+    "activityBar.foreground": "#ff6600",
+    "activityBarBadge.background": "#ff6600",
+    "activityBar.activeBorder": "#ff6600",
+    "titleBar.activeBackground": "#ff6600",
+    "titleBar.activeForeground": "#fff",
+    "statusBar.background": "#ff660050",
+    "statusBar.foreground": "#fff",
+    "statusBarItem.hoverBackground": "#ff6600",
+    "statusBarItem.remoteBackground": "#ff6600",
+    "tab.activeBorderTop": "#ff6600"
+  },
+  "liveServer.settings.port": 5505,
+  "editor.tokenColorCustomizations": {
+    "comments": "",
+    "textMateRules": []
+  }
+}

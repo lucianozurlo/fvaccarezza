@@ -1,0 +1,17 @@
+/* Puntito que sigue al mouse */
+.fx-cursor{
+  position: fixed;
+  left: 0; top: 0;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: #ff6600;
+  pointer-events: none;
+  z-index: 2147483647; /* arriba de todo */
+  transform: translate3d(var(--x,-100px),var(--y,-100px),0) scale(var(--s,1));
+  transition: transform 150ms ease;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .fx-cursor{ transition: none; }
+}

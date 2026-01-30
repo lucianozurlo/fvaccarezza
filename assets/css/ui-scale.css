@@ -1,0 +1,44 @@
+/* ui-scale.css
+   Freeze+Scale:
+   - Diseño “congelado” a 1500px
+   - Entre 1500 y 960: se escala con transform
+   - <=960: se desactiva y entra responsive normal
+*/
+
+:root {
+  --ui-design-w: 1500;
+  --ui-break-w: 960;
+  --ui-scale: 1; /* lo setea JS */
+}
+
+/* Stage: queda en flujo y toma el alto “real” (lo setea JS) */
+.ui-scale-stage {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Root escalable (usa tu main#body-inner) */
+#body-inner.ui-scale-root {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: calc(var(--ui-design-w) * 1px);
+  transform-origin: top center;
+  transform: translateX(-50%) scale(var(--ui-scale));
+  will-change: transform;
+}
+
+/* <= 960px: apago freeze/scale y vuelve el layout normal */
+@media (max-width: 960px) {
+  .ui-scale-stage {
+    overflow-x: visible;
+  }
+  #body-inner.ui-scale-root {
+    position: relative;
+    left: auto;
+    width: 100%;
+    transform: none;
+    will-change: auto;
+  }
+}

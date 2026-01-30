@@ -1,0 +1,186 @@
+@view-transition {
+  navigation: auto;
+}
+
+/* ========= View Transitions ========= */
+:root{
+  --fade-dur: 800ms;
+
+  --slide-dur: 800ms;
+  --slide-ease: cubic-bezier(.2,.8,.2,1);
+
+  /* default slide direction: next */
+  --vt-old-from: 0%;
+  --vt-old-to: -100%;
+  --vt-new-from: 100%;
+  --vt-new-to: 0%;
+}
+
+:root[data-vt-dir="prev"] {
+  --vt-old-to: 100%;
+  --vt-new-from: -100%;
+}
+
+/* IMPORTANTE: pseudo-elementos adjuntos al :root (sin espacio) */
+:root::view-transition-old(root),
+:root::view-transition-new(root) {
+  mix-blend-mode: normal;
+}
+
+/* -------- Fade -------- */
+:root[data-vt-mode="fade"]::view-transition-old(root),
+:root[data-vt-mode="fade"]::view-transition-new(root) {
+  animation: none; /* mata el cross-fade default */
+}
+
+:root[data-vt-mode="fade"]::view-transition-old(root) {
+  animation: vt-fade-out var(--fade-dur) ease both;
+}
+:root[data-vt-mode="fade"]::view-transition-new(root) {
+  animation: vt-fade-in var(--fade-dur) ease both;
+}
+
+@keyframes vt-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes vt-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* -------- Slide -------- */
+:root[data-vt-mode="slide"]::view-transition-old(root),
+:root[data-vt-mode="slide"]::view-transition-new(root) {
+  animation: none; /* mata el cross-fade default */
+}
+
+:root[data-vt-mode="slide"]::view-transition-old(root) {
+  animation: vt-old-slide var(--slide-dur) var(--slide-ease) both;
+}
+:root[data-vt-mode="slide"]::view-transition-new(root) {
+  animation: vt-new-slide var(--slide-dur) var(--slide-ease) both;
+}
+
+@keyframes vt-old-slide {
+  from {
+    transform: translateX(var(--vt-old-from));
+  }
+  to {
+    transform: translateX(var(--vt-old-to));
+  }
+}
+@keyframes vt-new-slide {
+  from {
+    transform: translateX(var(--vt-new-from));
+  }
+  to {
+    transform: translateX(var(--vt-new-to));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root[data-vt-mode]::view-transition-old(root),
+  :root[data-vt-mode]::view-transition-new(root) {
+    animation: none !important;
+  }
+}
+
+/* ==========================================
+   VT: apagar/encender elementos durante navegación
+   (evita el "queda a mitad" con stagger)
+   - OLD: 1 -> 0 rápido y se queda 0
+   - NEW: queda 0 al inicio y entra al final
+   ========================================== */
+
+/* ---------- IDs => view-transition-name ---------- */
+#logo-header { view-transition-name: vt_logo; }
+#tt-header   { view-transition-name: vt_tt; }
+
+#bg-vectors-1 { view-transition-name: vt_bgv1; }
+#bg-vectors-2 { view-transition-name: vt_bgv2; }
+#bg-vectors-3 { view-transition-name: vt_bgv3; }
+#bg-vectors-4 { view-transition-name: vt_bgv4; }
+#bg-vectors-5 { view-transition-name: vt_bgv5; }
+#bg-vectors-6 { view-transition-name: vt_bgv6; }
+
+/* ---------- sin animación default del grupo ---------- */
+/* :root[data-vt-mode]::view-transition-group(vt_logo),
+:root[data-vt-mode]::view-transition-group(vt_tt), */
+/* :root[data-vt-mode]::view-transition-group(vt_bgv1), */
+:root[data-vt-mode]::view-transition-group(vt_bgv2),
+/* :root[data-vt-mode]::view-transition-group(vt_bgv3), */
+:root[data-vt-mode]::view-transition-group(vt_bgv4),
+:root[data-vt-mode]::view-transition-group(vt_bgv5),
+:root[data-vt-mode]::view-transition-group(vt_bgv6){
+  animation: none !important;
+}
+
+/* ---------- OLD (sale) ---------- */
+/* :root[data-vt-mode]::view-transition-old(vt_logo),
+:root[data-vt-mode]::view-transition-old(vt_tt), */
+/* :root[data-vt-mode]::view-transition-old(vt_bgv1), */
+:root[data-vt-mode]::view-transition-old(vt_bgv2),
+/* :root[data-vt-mode]::view-transition-old(vt_bgv3), */
+:root[data-vt-mode]::view-transition-old(vt_bgv4),
+:root[data-vt-mode]::view-transition-old(vt_bgv5),
+:root[data-vt-mode]::view-transition-old(vt_bgv6){
+  animation: vt-el-out var(--fade-dur) ease both;
+  mix-blend-mode: normal;
+}
+
+/* ---------- NEW (entra) ---------- */
+/* :root[data-vt-mode]::view-transition-new(vt_logo),
+:root[data-vt-mode]::view-transition-new(vt_tt), */
+/* :root[data-vt-mode]::view-transition-new(vt_bgv1), */
+:root[data-vt-mode]::view-transition-new(vt_bgv2),
+/* :root[data-vt-mode]::view-transition-new(vt_bgv3), */
+:root[data-vt-mode]::view-transition-new(vt_bgv4),
+:root[data-vt-mode]::view-transition-new(vt_bgv5),
+:root[data-vt-mode]::view-transition-new(vt_bgv6){
+  animation: vt-el-in var(--fade-dur) ease both;
+  mix-blend-mode: normal;
+}
+
+/* 0%..40%: 1->0, 40%..100%: queda 0 */
+@keyframes vt-el-out{
+  0%   { opacity: 1; }
+  1%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* 0%..60%: queda 0, 60%..100%: 0->1 */
+@keyframes vt-el-in{
+  0%   { opacity: 0; }
+  99%  { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  /* :root[data-vt-mode]::view-transition-old(vt_logo),
+  :root[data-vt-mode]::view-transition-new(vt_logo),
+  :root[data-vt-mode]::view-transition-old(vt_tt),
+  :root[data-vt-mode]::view-transition-new(vt_tt), */
+  /* :root[data-vt-mode]::view-transition-old(vt_bgv1),
+  :root[data-vt-mode]::view-transition-new(vt_bgv1), */
+  :root[data-vt-mode]::view-transition-old(vt_bgv2),
+  :root[data-vt-mode]::view-transition-new(vt_bgv2),
+  /* :root[data-vt-mode]::view-transition-old(vt_bgv3),
+  :root[data-vt-mode]::view-transition-new(vt_bgv3), */
+  :root[data-vt-mode]::view-transition-old(vt_bgv4),
+  :root[data-vt-mode]::view-transition-new(vt_bgv4),
+  :root[data-vt-mode]::view-transition-old(vt_bgv5),
+  :root[data-vt-mode]::view-transition-new(vt_bgv5),
+  :root[data-vt-mode]::view-transition-old(vt_bgv6),
+  :root[data-vt-mode]::view-transition-new(vt_bgv6){
+    animation: none !important;
+  }
+}

@@ -1,0 +1,38 @@
+html.no-scroll,
+html.no-scroll body {
+  overflow: hidden;
+}
+
+/* Sitio invisible mientras está cargando (luego fade a 1) */
+html.is-preloading body {
+  opacity: 0;
+}
+
+html.is-loaded body {
+  opacity: 1;
+  transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Overlay del preloader: SOLO fondo */
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background: var(--color-fede-white, #f8f8f8);
+  opacity: 1;
+  pointer-events: all;
+  transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+#preloader.is-done {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.is-loaded body {
+    transition: none;
+  }
+  #preloader {
+    transition: none;
+  }
+}

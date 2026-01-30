@@ -1,0 +1,325 @@
+/* ──────────────────────────────────────────────────────────────────────────────
+   Normalize+Reset+Reboot v2025.09
+   Autor: Tú ✦ Uso: pegar al inicio de tu CSS (antes de cualquier componente).
+   Filosofía:
+   - No opinable en estilos visuales (colores/tamaños), sí en consistencia.
+   - Resetea márgenes, normaliza tipografías, inputs, medias y tablas.
+   - Accesibilidad: focus-visible, reduced-motion, color-scheme.
+   - Especificidad baja: usa :where/ :is para que sea fácil sobreescribir.
+────────────────────────────────────────────────────────────────────────────── */
+
+/* 1) Box-sizing universal y correcciones de scrollbars */
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+}
+html {
+   -webkit-text-size-adjust: 100%;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+/* 2) Modo color según preferencia del SO (sin forzar tema) */
+:root {
+   color-scheme: light dark;
+}
+
+/* 3) Reset de márgenes y tipografías base */
+:where(body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd) {
+   margin: 0;
+}
+:where(body) {
+   min-height: 100dvh;
+   line-height: 1.5;
+   text-rendering: optimizeLegibility;
+   -webkit-font-smoothing: antialiased;
+   font-synthesis-weight: none;
+   -webkit-font-kerning: normal;
+   font-kerning: normal;
+   font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+}
+
+/* 4) Layout base: imágenes, videos, SVGs, canvas */
+:where(img, svg, video, canvas, audio, iframe, embed, object) {
+   display: block;
+   max-width: 100%;
+}
+:where(img, video) {
+   height: auto;
+}
+:where(svg) {
+   fill: currentColor;
+}
+:where(picture) {
+   display: block;
+}
+
+/* 5) Tipografía: tamaños y encabezados coherentes sin márgenes colapsados */
+:where(h1, h2, h3, h4, h5, h6) {
+   font-weight: 600;
+   line-height: 1.2;
+}
+:where(h1) {
+   font-size: clamp(1.875rem, 1.2rem + 2vw, 2.5rem);
+}
+:where(h2) {
+   font-size: clamp(1.5rem, 1.05rem + 1.5vw, 2rem);
+}
+:where(h3) {
+   font-size: clamp(1.25rem, 1.02rem + 0.8vw, 1.5rem);
+}
+:where(h4) {
+   font-size: 1.125rem;
+}
+:where(h5) {
+   font-size: 1rem;
+}
+:where(h6) {
+   font-size: 0.875rem;
+}
+
+/* 6) Enlaces y foco accesible */
+:where(a) {
+   color: inherit;
+   text-decoration: none;
+}
+:where(a:hover) {
+   text-decoration: underline;
+}
+:where(:focus) {
+   outline: none;
+}
+:where(:focus-visible) {
+   outline: 2px solid Highlight; /* Windows/High Contrast friendly */
+   outline-offset: 2px;
+}
+
+/* 7) Listas y citas */
+:where(ul[role='list'], ol[role='list']) {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+:where(ul, ol) {
+   -webkit-padding-start: 1.25rem;
+   padding-inline-start: 1.25rem;
+}
+:where(blockquote) {
+   margin-inline: 0;
+   padding-inline: 1rem;
+   -webkit-border-start: 4px solid currentColor;
+   border-inline-start: 4px solid currentColor;
+}
+
+/* 8) Tablas */
+:where(table) {
+   border-collapse: collapse;
+   border-spacing: 0;
+   width: 100%;
+}
+:where(th, td) {
+   padding: 0;
+   text-align: start;
+   vertical-align: top;
+}
+
+/* 9) Formularios: tipografías heredadas y estilos consistentes */
+:where(button, input, select, textarea) {
+   font: inherit;
+   color: inherit;
+   letter-spacing: inherit;
+   background: transparent;
+   border: 1px solid transparent;
+   margin: 0;
+}
+:where(button) {
+   cursor: pointer;
+}
+:where(button:disabled, input:disabled, select:disabled, textarea:disabled) {
+   cursor: not-allowed;
+}
+:where(input, textarea, select) {
+   width: 100%;
+}
+:where(textarea) {
+   resize: vertical;
+   min-height: 6rem;
+}
+:where(label, legend) {
+   display: block;
+   font-weight: 500;
+   margin-block: 0.25rem;
+}
+:where(fieldset) {
+   min-inline-size: auto;
+   border: 0;
+   padding: 0;
+   margin: 0;
+}
+
+/* 9.1) Inputs específicos */
+:where(input[type='search']) {
+   -webkit-appearance: textfield;
+   outline-offset: 0;
+}
+:where(input[type='number']) {
+   -moz-appearance: textfield;
+}
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+}
+:where(input[type='file']) {
+   border: 0;
+}
+:where(input[type='color']) {
+   padding: 0;
+   border: none;
+   width: 2.5rem;
+   height: 2rem;
+}
+
+/* 9.2) Controles nativos cross-browser */
+:where(select) {
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+   background-repeat: no-repeat;
+   background-position: right 0.5rem center;
+   background-size: 1rem;
+}
+:where(progress) {
+   vertical-align: baseline;
+}
+:where(meter) {
+   inline-size: 100%;
+}
+
+/* 10) Botones y elementos interactivos */
+:where(button, [type='button'], [type='submit'], [role='button']) {
+   -webkit-tap-highlight-color: transparent;
+}
+:where(summary) {
+   cursor: pointer;
+}
+
+/* 11) Código y preformateado */
+:where(code, kbd, samp, pre) {
+   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
+   font-size: 0.95em;
+}
+:where(pre) {
+   white-space: pre-wrap;
+   word-wrap: break-word;
+}
+
+/* 12) HR consistente */
+:where(hr) {
+   height: 0;
+   border: 0;
+   border-top: 1px solid currentColor;
+   opacity: 0.25;
+   margin: 1rem 0;
+}
+
+/* 13) Detalles HTML5 */
+:where(main) {
+   display: block;
+}
+:where(abbr[title]) {
+   -webkit-text-decoration: underline dotted;
+   text-decoration: underline dotted;
+}
+:where(sup) {
+   top: -0.5em;
+   position: relative;
+   font-size: 75%;
+   line-height: 0;
+}
+:where(sub) {
+   bottom: -0.25em;
+   position: relative;
+   font-size: 75%;
+   line-height: 0;
+}
+
+/* 14) Contenedores medios fluidos (opcional, no opinable de spacing) */
+:where(.container, .wrap, .wrapper) {
+   inline-size: min(100%, 72rem);
+   margin-inline: auto;
+}
+
+/* 15) Imágenes decorativas y alt vacío → ocultar a lectores de pantalla */
+:where(img[alt='']) {
+   role: presentation;
+}
+
+/* 16) Reseteo de márgenes verticales comunes (stack spacing control) */
+:where(p, ul, ol, dl, pre, blockquote, table, figure)
+   + :where(*):not(:where(h1, h2, h3, h4, h5, h6)) {
+   -webkit-margin-before: 1rem;
+   margin-block-start: 1rem;
+}
+
+/* 17) Interacciones en móviles */
+@media (hover: none) {
+   :where(a:hover) {
+      text-decoration: none;
+   }
+}
+
+/* 18) Animaciones y usuarios con reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
+   * {
+      -webkit-animation-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      -webkit-animation-iteration-count: 1 !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+   }
+}
+
+/* 19) Impresión básica */
+@media print {
+   :where(*),
+   :where(*::before),
+   :where(*::after) {
+      background: transparent !important;
+      box-shadow: none !important;
+   }
+   :where(a, a:visited) {
+      text-decoration: underline;
+   }
+   :where(pre, blockquote) {
+      border: 1px solid #999;
+      page-break-inside: avoid;
+   }
+   :where(img) {
+      page-break-inside: avoid;
+   }
+   :where(h2, h3, p) {
+      orphans: 3;
+      widows: 3;
+   }
+}
+
+/* 20) Helpers mínimos (opcionales) */
+:where(.visually-hidden) {
+   position: absolute !important;
+   inline-size: 1px;
+   block-size: 1px;
+   padding: 0;
+   margin: -1px;
+   overflow: hidden;
+   clip: rect(0 0 0 0);
+   white-space: nowrap;
+   border: 0;
+}
+:where(.clearfix)::after {
+   content: '';
+   display: table;
+   clear: both;
+}

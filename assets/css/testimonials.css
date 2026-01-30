@@ -1,0 +1,120 @@
+.carousel {
+  width: 1320px;
+  max-width: 100%;
+  margin: -50px auto;
+  position: relative;
+  overflow: hidden;
+  padding: 50px 0;
+}
+.stage {
+  position: relative;
+  width: 100%;
+  height: 237px;
+  overflow: visible;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+.verbatim {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 540px;
+  height: 237px;
+  transform-origin: center center;
+  transform: translate(-50%, -50%);
+  transition: all 0.8s cubic-bezier(0.3, 1.3, 0.5, 1);
+  will-change: transform, filter;
+  border-radius: 7px;
+  background: var(--color-fede-white);
+  box-shadow: 0 0 39.7px rgba(0, 0, 0, 0.1);
+
+  padding: 45px 45px 45px 35px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.verbatim p {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 200;
+  margin: 0 0 8px 0;
+  padding: 0 12px;
+  text-align: left;
+}
+.verbatim p:first-child {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.verbatim p span {
+  font-weight: 700;
+  margin-right: 5px;
+}
+.verbatim img {
+  display: block;
+  width: 88px;
+  height: 88px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  margin: 10px auto 0;
+  border-radius: 999px;
+}
+.hit {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  z-index: 5;
+  background: transparent;
+  cursor: pointer;
+}
+.hit.left {
+  left: 0;
+}
+.hit.right {
+  right: 0;
+}
+
+/* Accesibilidad mínima */
+.verbatim:focus-visible {
+  outline: 3px solid #7aa7ff;
+  outline-offset: 2px;
+}
+
+@media (max-width: 960px) {
+  .carousel {
+    margin: 0 auto;
+    padding: 28px 0;
+  }
+
+  /* Card responsive sin romper tu layout absoluto */
+  .verbatim {
+    width: calc(100% - 32px);
+    max-width: 560px;
+    padding: 24px 18px;
+    gap: 16px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 14px !important;
+  }
+
+  .verbatim p {
+    font-size: 15px;
+    line-height: 21px;
+    padding: 0; /* en mobile el padding en <p> suele achicar demasiado el texto útil */
+  }
+
+  .verbatim p:first-child {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .verbatim img {
+    width: 64px;
+    height: 64px;
+    margin: 0;
+  }
+}
