@@ -12,7 +12,7 @@
     "statusBarItem.remoteBackground": "#ff6600",
     "tab.activeBorderTop": "#ff6600"
   },
-  "liveServer.settings.port": 5505,
+  "liveServer.settings.port": 5506,
   "editor.tokenColorCustomizations": {
     "comments": "",
     "textMateRules": []

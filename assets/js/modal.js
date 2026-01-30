@@ -4,7 +4,7 @@
   const MODAL_SELECTOR = ".modal-simple";
   const CONTENT_SELECTOR = ".modal__dialog > .content";
 
-  const CLOSE_MS = 420; // igual a --modal-close-ms
+  const CLOSE_MS = 1500; // igual a --modal-close-ms
 
   let activeModal = null;
   let lastActive = null;

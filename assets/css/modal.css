@@ -322,3 +322,36 @@
   gap: 40px;
   max-width: 341px;
 } */
+
+
+/* ==========================================
+   SUBMODAL full-screen: scroll dentro de .content
+   ========================================== */
+.modal-simple.submmodal{
+  align-items: stretch;
+  justify-items: stretch;
+}
+
+.modal-simple.submmodal .modal__dialog{
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;              /* clave */
+  overscroll-behavior: contain;  /* evita "pasar" el scroll al body */
+}
+
+/* el scroll vive acá */
+.modal-simple.submmodal .content{
+  flex: 1 1 auto;
+  min-height: 0;                 /* clave para overflow en flex */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+
+  /* si querés que arranque centrado, poné center;
+     pero para contenidos largos es mejor start */
+  justify-content: flex-start;
+  align-items: center;
+
+  padding-bottom: max(40px, env(safe-area-inset-bottom));
+  width: 100%;
+}
