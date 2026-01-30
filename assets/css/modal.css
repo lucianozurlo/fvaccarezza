@@ -349,7 +349,6 @@
 
   /* si querés que arranque centrado, poné center;
      pero para contenidos largos es mejor start */
-  justify-content: flex-start;
   align-items: center;
 
   padding-bottom: max(40px, env(safe-area-inset-bottom));
