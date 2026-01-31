@@ -31,7 +31,7 @@
   };
 
   // endpoints: Netlify → PHP
-  const ENDPOINTS = ["/.netlify/functions/contact", "/contact.php"];
+  const ENDPOINTS = ["/.netlify/functions/contact", "/assets/contact.php"];
 
   async function send(payload) {
     let lastErr;
