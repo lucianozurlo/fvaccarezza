@@ -21,7 +21,7 @@ if (!$name || !$email || !$type) {
 }
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
   http_response_code(400);
-  echo json_encode(['ok'=>false, 'error'=>'Invalid email.']); exit;
+  echo json_encode(['ok'=>false, 'error'=>'Invalid e-mail.']); exit;
 }
 
 $to = 'fvaccarezza@gmail.com';
