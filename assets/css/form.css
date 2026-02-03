@@ -1,0 +1,100 @@
+.field {
+  margin-bottom: 26px;
+}
+.field label,
+legend {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 11px;
+}
+.input,
+textarea {
+  width: 100%;
+  border: 0.5px solid var(--color-fede-fv);
+  border-radius: 7px;
+  padding: 10px;
+  height: 32px;
+  background: transparent;
+  font-family: "PP Telegraf";
+  font-size: 14px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+/* Chips horizontales (single select) */
+.chips-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.chips-group[aria-invalid="true"] {
+  outline: 2px solid #ff4d4f;
+  outline-offset: 6px;
+  border-radius: 10px;
+}
+.chip {
+  position: relative;
+}
+.chip input[type="checkbox"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none; /* oculto pero accesible via label */
+}
+.chip label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 14px;
+  line-height: 1;
+  height: 33px;
+  width: 77px;
+  margin-bottom: 0;
+  background-image: url("../img/form-check.png");
+  background-size: contain;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+.chip label:active {
+  border-radius: 7px;
+  transform: scale(0.98);
+}
+.chip input[type="checkbox"]:hover + label {
+  background-color: #3a3a3944;
+  border-radius: 7px;
+}
+.chip input[type="checkbox"]:checked + label {
+  border-radius: 7px;
+  background: var(--color-fede-fv) !important;
+  background-color: var(--color-fede-fv) !important;
+  color: var(--color-fede-orange) !important;
+}
+.actions {
+  margin-top: 22px;
+  display: flex;
+  gap: 12px;
+}
+.hint {
+  font-size: 14px;
+  font-weight: 500;
+  width: 100%;
+  text-align: center;
+  color: #fff !important;
+  margin-top: 18px;
+  height: 30px;
+}

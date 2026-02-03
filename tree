@@ -1,0 +1,584 @@
+_fv/
+├─ .vscode/
+│  └─ settings.json
+├─ assets/
+│  ├─ css/
+│  │  ├─ config.css
+│  │  ├─ cursor.css
+│  │  ├─ fede.css
+│  │  ├─ form.css
+│  │  ├─ gallery.css
+│  │  ├─ helper.css
+│  │  ├─ modal.css
+│  │  ├─ photos.css
+│  │  ├─ preload-work.css
+│  │  ├─ preload.css
+│  │  ├─ responsive.css
+│  │  ├─ testimonials.css
+│  │  ├─ theme.css
+│  │  ├─ transition.css
+│  │  └─ work.css
+│  ├─ fonts/
+│  │  ├─ fonts.css
+│  │  ├─ PPTelegraf-Regular.eot
+│  │  ├─ PPTelegraf-Regular.woff
+│  │  ├─ PPTelegraf-Regular.woff2
+│  │  ├─ PPTelegraf-RegularSlanted.eot
+│  │  ├─ PPTelegraf-RegularSlanted.woff
+│  │  ├─ PPTelegraf-RegularSlanted.woff2
+│  │  ├─ PPTelegraf-Ultrabold.eot
+│  │  ├─ PPTelegraf-Ultrabold.woff
+│  │  ├─ PPTelegraf-Ultrabold.woff2
+│  │  ├─ PPTelegraf-UltraboldSlanted.eot
+│  │  ├─ PPTelegraf-UltraboldSlanted.woff
+│  │  ├─ PPTelegraf-UltraboldSlanted.woff2
+│  │  ├─ PPTelegraf-Ultralight.eot
+│  │  ├─ PPTelegraf-Ultralight.woff
+│  │  ├─ PPTelegraf-Ultralight.woff2
+│  │  ├─ PPTelegraf-UltralightSlanted.eot
+│  │  ├─ PPTelegraf-UltralightSlanted.woff
+│  │  └─ PPTelegraf-UltralightSlanted.woff2
+│  ├─ home/
+│  │  ├─ big-mother-energy-b.jpg
+│  │  ├─ big-mother-energy.jpg
+│  │  ├─ broke-b.jpg
+│  │  ├─ broke.jpg
+│  │  ├─ cleo-b.jpg
+│  │  ├─ cleo.jpg
+│  │  ├─ estudio32-b.jpg
+│  │  ├─ estudio32.jpg
+│  │  ├─ frogbazar-b.jpg
+│  │  ├─ frogbazar.jpg
+│  │  ├─ logofolio-b.jpg
+│  │  ├─ logofolio.jpg
+│  │  ├─ michi-b.jpg
+│  │  ├─ michi.jpg
+│  │  ├─ nmp-b.jpg
+│  │  ├─ nmp.jpg
+│  │  ├─ opame-b.jpg
+│  │  ├─ opame.jpg
+│  │  ├─ photography-b.jpg
+│  │  ├─ photography.jpg
+│  │  ├─ ui-ux-b.jpg
+│  │  ├─ ui-ux.jpg
+│  │  ├─ web-b.jpg
+│  │  └─ web.jpg
+│  ├─ img/
+│  │  ├─ bg-lines/
+│  │  │  ├─ bg-lines1.svg
+│  │  │  ├─ bg-lines2.svg
+│  │  │  ├─ bg-lines3.svg
+│  │  │  ├─ bg-lines4.svg
+│  │  │  ├─ bg-lines5.svg
+│  │  │  ├─ bg-lines6.svg
+│  │  │  ├─ bg-modal-goback.svg
+│  │  │  ├─ modal-bg-lines1.svg
+│  │  │  ├─ modal-bg-lines2.svg
+│  │  │  ├─ modal-bg1.svg
+│  │  │  ├─ modal-bg2.svg
+│  │  │  ├─ work-bg-lines1.svg
+│  │  │  ├─ work-bg-lines2.svg
+│  │  │  ├─ work-bg-lines3.svg
+│  │  │  ├─ work-bg-lines4.svg
+│  │  │  ├─ work-bg-lines5.svg
+│  │  │  └─ work-bg-lines6.svg
+│  │  ├─ icons/
+│  │  │  ├─ ae.svg
+│  │  │  ├─ ai.svg
+│  │  │  ├─ cinema4d.svg
+│  │  │  ├─ figma.svg
+│  │  │  ├─ lr.svg
+│  │  │  └─ ps.svg
+│  │  ├─ stamp/
+│  │  │  ├─ approved-a.svg
+│  │  │  ├─ approved-b.svg
+│  │  │  ├─ approved.svg
+│  │  │  ├─ crafting-a.svg
+│  │  │  ├─ crafting-b.svg
+│  │  │  ├─ crafting.svg
+│  │  │  ├─ LAUNCHED SITE.svg
+│  │  │  ├─ launched-a.svg
+│  │  │  ├─ launched-b-2022.svg
+│  │  │  ├─ launched-b-2023.svg
+│  │  │  ├─ launched-b-2024.svg
+│  │  │  ├─ launched-b-work.svg
+│  │  │  ├─ launched-b.svg
+│  │  │  ├─ launched.svg
+│  │  │  ├─ project-be-a.svg
+│  │  │  ├─ project-be-b.svg
+│  │  │  └─ project-be.svg
+│  │  ├─ arrow-next.svg
+│  │  ├─ arrow-prev.svg
+│  │  ├─ bg-footer.svg
+│  │  ├─ bg-noise.jpg
+│  │  ├─ btn-modal-goback.png
+│  │  ├─ button-footer-mob.png
+│  │  ├─ button-mob.png
+│  │  ├─ close.svg
+│  │  ├─ contact.svg
+│  │  ├─ favicon.png
+│  │  ├─ fede.jpg
+│  │  ├─ fede.svg
+│  │  ├─ footer_lets-build-mask.svg
+│  │  ├─ footer_lets-build-mob.svg
+│  │  ├─ footer_lets-build.svg
+│  │  ├─ footer-1-mob.svg
+│  │  ├─ footer-1.svg
+│  │  ├─ footer-2-mask-mob.svg
+│  │  ├─ footer-2-mask.svg
+│  │  ├─ footer-2-mob.svg
+│  │  ├─ footer-2.svg
+│  │  ├─ footer-3-mob.svg
+│  │  ├─ footer-3.svg
+│  │  ├─ footer-4-mob.svg
+│  │  ├─ footer-4.svg
+│  │  ├─ footer-works_lets-build.svg
+│  │  ├─ footer-works-1-mob.svg
+│  │  ├─ footer-works-1.svg
+│  │  ├─ footer-works-2-mob.svg
+│  │  ├─ footer-works-2.svg
+│  │  ├─ footer-works-3-mob.svg
+│  │  ├─ footer-works-3.svg
+│  │  ├─ footer-works-4-mob.svg
+│  │  ├─ footer-works-4.svg
+│  │  ├─ footer-works-mask-mob.svg
+│  │  ├─ footer-works-mask.svg
+│  │  ├─ form-check.png
+│  │  ├─ form-submit.png
+│  │  ├─ fv-logo-vector.svg
+│  │  ├─ fv-logo.svg
+│  │  ├─ icon-close.svg
+│  │  ├─ logofolio-icon.svg
+│  │  ├─ low-qlt-thumb.jpg
+│  │  ├─ modal-button-close.png
+│  │  ├─ modal-faq.svg
+│  │  ├─ modal-process.svg
+│  │  ├─ noise-black.jpg
+│  │  ├─ noise-orange.jpg
+│  │  ├─ noise-yellow.jpg
+│  │  ├─ photo-vector-1.svg
+│  │  ├─ photo-vector-2.svg
+│  │  ├─ photography-icon.svg
+│  │  ├─ preload-vector-a.svg
+│  │  ├─ preload-vector-b.svg
+│  │  ├─ preload-vector.svg
+│  │  ├─ preloader-bg-1.svg
+│  │  ├─ preloader-bg-2.svg
+│  │  ├─ services-button1-mob.png
+│  │  ├─ services-button1.png
+│  │  ├─ services-button1.svg
+│  │  ├─ services-button2.png
+│  │  ├─ services-button2.svg
+│  │  ├─ services-item1.svg
+│  │  ├─ services-item2.svg
+│  │  ├─ services-item3.svg
+│  │  ├─ services-item4.svg
+│  │  ├─ services-stars.svg
+│  │  ├─ social-behance.svg
+│  │  ├─ social-dribble.svg
+│  │  ├─ social-vsco.svg
+│  │  ├─ talk-buttons.png
+│  │  ├─ trusted-logo1.svg
+│  │  ├─ trusted-logo10.svg
+│  │  ├─ trusted-logo11.svg
+│  │  ├─ trusted-logo12.svg
+│  │  ├─ trusted-logo2.svg
+│  │  ├─ trusted-logo3.svg
+│  │  ├─ trusted-logo4.svg
+│  │  ├─ trusted-logo5.svg
+│  │  ├─ trusted-logo6.svg
+│  │  ├─ trusted-logo7.svg
+│  │  ├─ trusted-logo8.svg
+│  │  ├─ trusted-logo9.svg
+│  │  ├─ uiux-icon.svg
+│  │  ├─ uxui-separator.svg
+│  │  ├─ web-icon.svg
+│  │  ├─ word1.jpg
+│  │  ├─ word2.jpg
+│  │  ├─ word3.jpg
+│  │  ├─ word4.jpg
+│  │  ├─ word5.jpg
+│  │  ├─ work-brush.svg
+│  │  ├─ work-scroll-arrow.svg
+│  │  └─ work-scroll.svg
+│  ├─ js/
+│  │  ├─ form.js
+│  │  ├─ gallery.js
+│  │  ├─ menu.js
+│  │  ├─ modal.js
+│  │  ├─ noise.js
+│  │  ├─ photos.js
+│  │  ├─ preload-work.js
+│  │  ├─ preload.js
+│  │  ├─ preloadThumbs.js
+│  │  ├─ reel-logos.js
+│  │  ├─ scroll.js
+│  │  ├─ testimonials.js
+│  │  ├─ theme.js
+│  │  ├─ transition.js
+│  │  └─ work.js
+│  ├─ vendor/
+│  │  ├─ fontawesome/
+│  │  │  ├─ css/
+│  │  │  │  └─ fontawesome-all.min.css
+│  │  │  └─ webfonts/
+│  │  │     ├─ fa-brands-400﹖.eot
+│  │  │     ├─ fa-brands-400.eot
+│  │  │     ├─ fa-brands-400.svg
+│  │  │     ├─ fa-brands-400.ttf
+│  │  │     ├─ fa-brands-400.woff
+│  │  │     ├─ fa-brands-400.woff2
+│  │  │     ├─ fa-regular-400﹖.eot
+│  │  │     ├─ fa-regular-400.eot
+│  │  │     ├─ fa-regular-400.svg
+│  │  │     ├─ fa-regular-400.ttf
+│  │  │     ├─ fa-regular-400.woff
+│  │  │     ├─ fa-regular-400.woff2
+│  │  │     ├─ fa-solid-900﹖.eot
+│  │  │     ├─ fa-solid-900.eot
+│  │  │     ├─ fa-solid-900.svg
+│  │  │     ├─ fa-solid-900.ttf
+│  │  │     ├─ fa-solid-900.woff
+│  │  │     └─ fa-solid-900.woff2
+│  │  ├─ gsap/
+│  │  │  ├─ gsap.min.js
+│  │  │  ├─ ScrollToPlugin.min.js
+│  │  │  └─ ScrollTrigger.min.js
+│  │  ├─ isotope/
+│  │  │  ├─ imagesloaded.pkgd.min.js
+│  │  │  ├─ isotope.pkgd.min.js
+│  │  │  └─ packery-mode.pkgd.min.js
+│  │  ├─ jquery/
+│  │  │  └─ jquery.min.js
+│  │  ├─ lightgallery/
+│  │  │  ├─ css/
+│  │  │  │  └─ lightgallery.min.css
+│  │  │  ├─ fonts/
+│  │  │  │  ├─ lg﹖22t19m.svg
+│  │  │  │  ├─ lg﹖22t19m.ttf
+│  │  │  │  └─ lg﹖22t19m.woff
+│  │  │  ├─ img/
+│  │  │  │  ├─ loading.gif
+│  │  │  │  ├─ video-play.png
+│  │  │  │  ├─ vimeo-play.png
+│  │  │  │  └─ youtube-play.png
+│  │  │  └─ js/
+│  │  │     └─ lightgallery-all.min.js
+│  │  ├─ normalize/
+│  │  │  └─ normalize.min.css
+│  │  ├─ swiper/
+│  │  │  ├─ css/
+│  │  │  │  └─ swiper-bundle.min.css
+│  │  │  └─ js/
+│  │  │     └─ swiper-bundle.min.js
+│  │  ├─ jquery.mousewheel.min.js
+│  │  └─ smooth-scrollbar.js
+│  └─ cursor-follow.js
+├─ work/
+│  ├─ big-mother-energy/
+│  │  ├─ content/
+│  │  │  ├─ big-mother-energy-1.jpg
+│  │  │  ├─ big-mother-energy-2.png
+│  │  │  ├─ big-mother-energy-3.png
+│  │  │  ├─ big-mother-energy-4.jpg
+│  │  │  ├─ big-mother-energy-5.jpg
+│  │  │  ├─ big-mother-energy-6.jpg
+│  │  │  ├─ big-mother-energy-mob-1.png
+│  │  │  ├─ big-mother-energy-mob-2.png
+│  │  │  ├─ big-mother-energy-mob-2b.jpg
+│  │  │  ├─ big-mother-energy-mob-3.png
+│  │  │  ├─ big-mother-energy-mob-4.jpg
+│  │  │  └─ big-mother-energy-mob-5.jpg
+│  │  └─ index.html
+│  ├─ broke/
+│  │  ├─ content/
+│  │  │  ├─ broke-1.jpg
+│  │  │  ├─ broke-2.png
+│  │  │  ├─ broke-3-a.png
+│  │  │  ├─ broke-3-b.png
+│  │  │  ├─ broke-3-c.png
+│  │  │  ├─ broke-3-d.png
+│  │  │  ├─ broke-4-mob.png
+│  │  │  ├─ broke-4.png
+│  │  │  ├─ broke-5.jpg
+│  │  │  ├─ broke-mob1-mob.png
+│  │  │  ├─ broke-mob1.png
+│  │  │  └─ broke-mob2.png
+│  │  └─ index.html
+│  ├─ cleo/
+│  │  ├─ content/
+│  │  │  ├─ cleo-1.jpg
+│  │  │  ├─ cleo-2-a.jpg
+│  │  │  ├─ cleo-2-b.jpg
+│  │  │  ├─ cleo-2-c.png
+│  │  │  ├─ cleo-3-a.jpg
+│  │  │  ├─ cleo-3-b.png
+│  │  │  ├─ cleo-3-c.png
+│  │  │  ├─ cleo-4.jpg
+│  │  │  └─ cleo-laptop.png
+│  │  └─ index.html
+│  ├─ estudio32/
+│  │  ├─ content/
+│  │  │  ├─ estudio32-1.jpg
+│  │  │  ├─ estudio32-2-a.jpg
+│  │  │  ├─ estudio32-2-b.png
+│  │  │  └─ estudio32-3.jpg
+│  │  └─ index.html
+│  ├─ frogbazar/
+│  │  ├─ content/
+│  │  │  ├─ frogbazar-1.jpg
+│  │  │  ├─ frogbazar-2-a.jpg
+│  │  │  ├─ frogbazar-2-b.jpg
+│  │  │  ├─ frogbazar-2-c.jpg
+│  │  │  ├─ frogbazar-2-d.png
+│  │  │  ├─ frogbazar-3.jpg
+│  │  │  ├─ frogbazar-4.jpg
+│  │  │  ├─ frogbazar-mob1.png
+│  │  │  ├─ frogbazar-mob2.png
+│  │  │  ├─ frogbazar-mob3.png
+│  │  │  └─ frogbazar-mob4.png
+│  │  └─ index.html
+│  ├─ logofolio/
+│  │  ├─ content/
+│  │  │  ├─ logofolio-1.svg
+│  │  │  ├─ logofolio-10.svg
+│  │  │  ├─ logofolio-11.svg
+│  │  │  ├─ logofolio-12.svg
+│  │  │  ├─ logofolio-13.svg
+│  │  │  ├─ logofolio-14.svg
+│  │  │  ├─ logofolio-15.svg
+│  │  │  ├─ logofolio-16.svg
+│  │  │  ├─ logofolio-17.svg
+│  │  │  ├─ logofolio-18.svg
+│  │  │  ├─ logofolio-19-b.svg
+│  │  │  ├─ logofolio-19.svg
+│  │  │  ├─ logofolio-2.svg
+│  │  │  ├─ logofolio-20-b.png
+│  │  │  ├─ logofolio-20.png
+│  │  │  ├─ logofolio-21-b.svg
+│  │  │  ├─ logofolio-21.svg
+│  │  │  ├─ logofolio-22-b.svg
+│  │  │  ├─ logofolio-22.svg
+│  │  │  ├─ logofolio-23-b.svg
+│  │  │  ├─ logofolio-23.svg
+│  │  │  ├─ logofolio-3.svg
+│  │  │  ├─ logofolio-4.svg
+│  │  │  ├─ logofolio-5.svg
+│  │  │  ├─ logofolio-6.svg
+│  │  │  ├─ logofolio-7.svg
+│  │  │  ├─ logofolio-8.svg
+│  │  │  └─ logofolio-9.svg
+│  │  └─ index.html
+│  ├─ michi/
+│  │  ├─ content/
+│  │  │  ├─ michi-0.jpg
+│  │  │  ├─ michi-1.jpg
+│  │  │  ├─ michi-2-a.jpg
+│  │  │  ├─ michi-3-a.jpg
+│  │  │  ├─ michi-3-b-mob.jpg
+│  │  │  ├─ michi-3-b.png
+│  │  │  ├─ michi-4-2.jpg
+│  │  │  ├─ michi-4.jpg
+│  │  │  ├─ michi-5.jpg
+│  │  │  ├─ michi-5.png
+│  │  │  ├─ michi-mob0.png
+│  │  │  ├─ michi-mob1.png
+│  │  │  ├─ michi-mob2.png
+│  │  │  └─ michi-mob3.png
+│  │  └─ index.html
+│  ├─ nmp/
+│  │  ├─ content/
+│  │  │  ├─ nmp-1.jpg
+│  │  │  ├─ nmp-2-mob.png
+│  │  │  ├─ nmp-2.jpg
+│  │  │  ├─ nmp-3-mob.png
+│  │  │  ├─ nmp-3.jpg
+│  │  │  ├─ nmp-4.jpg
+│  │  │  ├─ nmp-ipad1.png
+│  │  │  ├─ nmp-ipad2.png
+│  │  │  ├─ nmp-mob1.png
+│  │  │  ├─ nmp-mob2.png
+│  │  │  ├─ nmp-mob3.png
+│  │  │  └─ nmp-mob4.png
+│  │  └─ index.html
+│  ├─ opame/
+│  │  ├─ content/
+│  │  │  ├─ opame-1.jpg
+│  │  │  ├─ opame-2-a.jpg
+│  │  │  ├─ opame-2-b.jpg
+│  │  │  ├─ opame-3-a.jpg
+│  │  │  ├─ opame-3-b.jpg
+│  │  │  ├─ opame-3-c.jpg
+│  │  │  ├─ opame-4.jpg
+│  │  │  ├─ opame-mob1.png
+│  │  │  ├─ opame-mob2.png
+│  │  │  ├─ opame-mob3.png
+│  │  │  └─ opame-mob4.png
+│  │  └─ index.html
+│  ├─ photography/
+│  │  ├─ photos/
+│  │  │  ├─ th/
+│  │  │  │  ├─ 01_th.jpg
+│  │  │  │  ├─ 02_th.jpg
+│  │  │  │  ├─ 03_th.jpg
+│  │  │  │  ├─ 04_th.jpg
+│  │  │  │  ├─ 05_th.jpg
+│  │  │  │  ├─ 06_th.jpg
+│  │  │  │  ├─ 07_th.jpg
+│  │  │  │  ├─ 08_th.jpg
+│  │  │  │  ├─ 09_th.jpg
+│  │  │  │  ├─ 10_th.jpg
+│  │  │  │  ├─ 11_th.jpg
+│  │  │  │  ├─ 12_th.jpg
+│  │  │  │  ├─ 13_th.jpg
+│  │  │  │  ├─ 14_th.jpg
+│  │  │  │  ├─ 15_th.jpg
+│  │  │  │  ├─ 16_th.jpg
+│  │  │  │  ├─ 17_th.jpg
+│  │  │  │  ├─ 18_th.jpg
+│  │  │  │  ├─ 19_th.jpg
+│  │  │  │  ├─ 20_th.jpg
+│  │  │  │  ├─ 21_th.jpg
+│  │  │  │  ├─ 22_th.jpg
+│  │  │  │  ├─ 23_th.jpg
+│  │  │  │  ├─ 24_th.jpg
+│  │  │  │  ├─ 25_th.jpg
+│  │  │  │  ├─ 26_th.jpg
+│  │  │  │  ├─ 27_th.jpg
+│  │  │  │  ├─ 28_th.jpg
+│  │  │  │  ├─ 29_th.jpg
+│  │  │  │  ├─ 30_th.jpg
+│  │  │  │  ├─ 31_th.jpg
+│  │  │  │  ├─ 32_th.jpg
+│  │  │  │  ├─ 33_th.jpg
+│  │  │  │  ├─ 34_th.jpg
+│  │  │  │  ├─ 35_th.jpg
+│  │  │  │  ├─ 36_th.jpg
+│  │  │  │  ├─ 37_th.jpg
+│  │  │  │  ├─ 38_th.jpg
+│  │  │  │  ├─ 39_th.jpg
+│  │  │  │  ├─ 40_th.jpg
+│  │  │  │  ├─ 41_th.jpg
+│  │  │  │  ├─ 42_th.jpg
+│  │  │  │  ├─ 43_th.jpg
+│  │  │  │  ├─ 44_th.jpg
+│  │  │  │  ├─ 45_th.jpg
+│  │  │  │  ├─ 46_th.jpg
+│  │  │  │  ├─ 47_th.jpg
+│  │  │  │  ├─ 48_th.jpg
+│  │  │  │  ├─ 49_th.jpg
+│  │  │  │  ├─ 50_th.jpg
+│  │  │  │  ├─ 51_th.jpg
+│  │  │  │  ├─ 52_th.jpg
+│  │  │  │  ├─ 53_th.jpg
+│  │  │  │  ├─ 54_th.jpg
+│  │  │  │  ├─ 55_th.jpg
+│  │  │  │  ├─ 56_th.jpg
+│  │  │  │  ├─ 57_th.jpg
+│  │  │  │  ├─ 58_th.jpg
+│  │  │  │  └─ 59_th.jpg
+│  │  │  ├─ 01.jpg
+│  │  │  ├─ 02.jpg
+│  │  │  ├─ 03.jpg
+│  │  │  ├─ 04.jpg
+│  │  │  ├─ 05.jpg
+│  │  │  ├─ 06.jpg
+│  │  │  ├─ 07.jpg
+│  │  │  ├─ 08.jpg
+│  │  │  ├─ 09.jpg
+│  │  │  ├─ 10.jpg
+│  │  │  ├─ 11.jpg
+│  │  │  ├─ 12.jpg
+│  │  │  ├─ 13.jpg
+│  │  │  ├─ 14.jpg
+│  │  │  ├─ 15.jpg
+│  │  │  ├─ 16.jpg
+│  │  │  ├─ 17.jpg
+│  │  │  ├─ 18.jpg
+│  │  │  ├─ 19.jpg
+│  │  │  ├─ 20.jpg
+│  │  │  ├─ 21.jpg
+│  │  │  ├─ 22.jpg
+│  │  │  ├─ 23.jpg
+│  │  │  ├─ 24.jpg
+│  │  │  ├─ 25.jpg
+│  │  │  ├─ 26.jpg
+│  │  │  ├─ 27.jpg
+│  │  │  ├─ 28.jpg
+│  │  │  ├─ 29.jpg
+│  │  │  ├─ 30.jpg
+│  │  │  ├─ 31.jpg
+│  │  │  ├─ 32.jpg
+│  │  │  ├─ 33.jpg
+│  │  │  ├─ 34.jpg
+│  │  │  ├─ 35.jpg
+│  │  │  ├─ 36.jpg
+│  │  │  ├─ 37.jpg
+│  │  │  ├─ 38.jpg
+│  │  │  ├─ 39.jpg
+│  │  │  ├─ 40.jpg
+│  │  │  ├─ 41.jpg
+│  │  │  ├─ 42.jpg
+│  │  │  ├─ 43.jpg
+│  │  │  ├─ 44.jpg
+│  │  │  ├─ 45.jpg
+│  │  │  ├─ 46.jpg
+│  │  │  ├─ 47.jpg
+│  │  │  ├─ 48.jpg
+│  │  │  ├─ 49.jpg
+│  │  │  ├─ 50.jpg
+│  │  │  ├─ 51.jpg
+│  │  │  ├─ 52.jpg
+│  │  │  ├─ 53.jpg
+│  │  │  ├─ 54.jpg
+│  │  │  ├─ 55.jpg
+│  │  │  ├─ 56.jpg
+│  │  │  ├─ 57.jpg
+│  │  │  ├─ 58.jpg
+│  │  │  └─ 59.jpg
+│  │  └─ index.html
+│  ├─ ui-ux/
+│  │  ├─ content/
+│  │  │  ├─ ipad1.png
+│  │  │  ├─ ipad2.png
+│  │  │  ├─ ipad3.png
+│  │  │  ├─ mob1-a.png
+│  │  │  ├─ mob1-b.png
+│  │  │  ├─ mob1-c.png
+│  │  │  ├─ mob2-a.png
+│  │  │  ├─ mob2-a2.png
+│  │  │  ├─ mob2-b.png
+│  │  │  ├─ mob2-b2.png
+│  │  │  ├─ mob2-c.png
+│  │  │  ├─ mob2-c2.png
+│  │  │  ├─ mob3-a.png
+│  │  │  ├─ mob3-b.png
+│  │  │  ├─ mob3-c.png
+│  │  │  ├─ mob4-a.png
+│  │  │  ├─ mob4-b.png
+│  │  │  └─ mob4-c.png
+│  │  └─ index.html
+│  └─ web/
+│     ├─ content/
+│     │  ├─ laptop1.png
+│     │  ├─ laptop2.png
+│     │  ├─ laptop3.png
+│     │  ├─ laptop4.png
+│     │  ├─ laptop5.png
+│     │  ├─ laptop6.png
+│     │  ├─ laptop7.png
+│     │  ├─ laptop8.png
+│     │  ├─ mob1.png
+│     │  ├─ mob2.png
+│     │  ├─ mob3.png
+│     │  ├─ mob4.png
+│     │  ├─ mob5.png
+│     │  ├─ mob6.png
+│     │  ├─ mob7.png
+│     │  └─ mob8.png
+│     └─ index.html
+├─ .gitignore
+├─ contact.php
+├─ index.html
+├─ netlify.toml
+└─ package.json
