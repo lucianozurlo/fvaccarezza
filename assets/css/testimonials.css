@@ -94,7 +94,7 @@
 
   /* Card responsive sin romper tu layout absoluto */
   .verbatim {
-    width: calc(100% - 32px);
+    width: calc(100% - 60px);
     max-width: 560px;
     padding: 24px 18px;
     gap: 16px;

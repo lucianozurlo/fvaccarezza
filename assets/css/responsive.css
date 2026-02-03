@@ -277,8 +277,9 @@
   #services .words-container {
     width: 100%;
     max-width: 1320px;
-    margin: 40px auto 30px;
-    padding: 0 16px;
+    margin: 40px 16px 30px;
+    padding: 0;
+    /* padding: 0 16px; */
   }
 
   .carousel {
@@ -424,7 +425,7 @@
   } */
   #services .words-container {
     width: 100%;
-    margin: 35px auto 45px;
+    margin: 35px 16px 45px;
   }
 
   /* TESTIMONIALS */
